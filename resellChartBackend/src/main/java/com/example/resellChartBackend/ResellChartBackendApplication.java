@@ -17,19 +17,4 @@ public class ResellChartBackendApplication {
 		SpringApplication.run(ResellChartBackendApplication.class, args);
 	}
 
-	@GetMapping
-	public List<ClothItem> getClothItems(){
-		return List.of(
-				new ClothItem(1L,
-						"Shoe",
-						"Airforce 1",
-						11
-						),
-				new ClothItem(2L,
-						"Shoe",
-						"Airforce 2",
-						12)
-		);
-	}
-
 }
