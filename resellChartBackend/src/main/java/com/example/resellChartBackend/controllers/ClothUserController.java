@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/user")
+@RequestMapping(path = "api/clothUser")
 public class ClothUserController {
 
     private final ClothUserService userService;
@@ -20,7 +20,7 @@ public class ClothUserController {
         this.userService = userService;
     }
     @GetMapping
-    public List<ClothUser> getUsers(){
+    public List<ClothUser> getClothUsers(){
        return userService.getClothUsers();
     }
 

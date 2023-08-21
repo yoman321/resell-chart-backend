@@ -9,8 +9,8 @@ public class ClothUser {
     @Id
     @SequenceGenerator(
             name = "user_sequence",
-           sequenceName = "user_sequence",
-           allocationSize = 1
+            sequenceName = "user_sequence",
+            allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
