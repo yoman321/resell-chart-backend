@@ -26,6 +26,9 @@ public class ClothUser {
         this.id = id;
         this.email = email;
     }
+    public ClothUser(String email){
+        this.email = email;
+    }
     public long getId(){
         return id;
     }

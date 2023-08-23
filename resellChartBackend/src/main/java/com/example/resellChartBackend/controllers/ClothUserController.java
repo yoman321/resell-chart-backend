@@ -3,9 +3,7 @@ package com.example.resellChartBackend.controllers;
 import com.example.resellChartBackend.domains.ClothUser;
 import com.example.resellChartBackend.services.ClothUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,15 +11,23 @@ import java.util.List;
 @RequestMapping(path = "api/clothUser")
 public class ClothUserController {
 
-    private final ClothUserService userService;
+    private final ClothUserService clothUserService;
 
     @Autowired
-    public ClothUserController(ClothUserService userService){
-        this.userService = userService;
+    public ClothUserController(ClothUserService clothUserService){
+        this.clothUserService = clothUserService;
     }
     @GetMapping
     public List<ClothUser> getClothUsers(){
-       return userService.getClothUsers();
+       return clothUserService.getClothUsers();
+    }
+    @PostMapping
+    public void registerNewClothUser(@RequestBody ClothUser clothUser){
+        clothUserService.addNewClothUser(clothUser);
+    }
+    @DeleteMapping(path = "{userId}")
+    public void deleteClothUser(@PathVariable("userId") Long id){
+        clothUserService.deleteClothUser(id);
     }
 
 }
