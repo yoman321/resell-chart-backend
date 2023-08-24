@@ -16,11 +16,13 @@ public class ClothUserConfig {
         return args -> {
             ClothUser Philip = new ClothUser(
                     1L,
-                    "someemail@gmail.com"
+                    "someemail@gmail.com",
+                    "somepass"
             );
             ClothUser Kevin = new ClothUser(
                     2L,
-                    "notanemail@gmail.com"
+                    "notanemail@gmail.com",
+                    "nopass"
             );
             repository.saveAll(List.of(Philip, Kevin));
         };
