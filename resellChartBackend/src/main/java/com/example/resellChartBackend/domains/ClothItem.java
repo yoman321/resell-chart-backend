@@ -1,7 +1,21 @@
 package com.example.resellChartBackend.domains;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class ClothItem {
 
+    @Id
+    @SequenceGenerator(
+            name = "item_sequence",
+            sequenceName = "item_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "item_sequence"
+    )
     private Long id;
     private String clothItemType;
     private String clothItemName;

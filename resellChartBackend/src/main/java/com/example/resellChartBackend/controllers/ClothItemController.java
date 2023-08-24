@@ -11,12 +11,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/clothItem")
-public class ClothItemsController {
+public class ClothItemController {
 
     private final ClothItemService clothItemService;
 
     @Autowired
-    public ClothItemsController(ClothItemService clothItemService){
+    public ClothItemController(ClothItemService clothItemService){
         this.clothItemService = clothItemService;
     }
     @GetMapping
