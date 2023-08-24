@@ -16,12 +16,14 @@ public class ClothItemConfig {
         return args -> {
             ClothItem item1 = new ClothItem(
                     1L,
+                    "someemail@gmail.com",
                     "shoes",
                     "Jordan 1",
                     12
             );
             ClothItem item2 = new ClothItem(
                     2L,
+                    "notanemail@gmail.com",
                     "shoes",
                     "Jordan 1",
                     7
