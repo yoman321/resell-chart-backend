@@ -1,4 +1,4 @@
-package com.example.resellChartBackend;
+package com.example.resellChartBackend.domains;
 
 public class ClothItem {
 

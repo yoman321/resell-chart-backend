@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @SpringBootApplication
-@RestController
-@RequestMapping(path = "api/clothItem")
 public class ResellChartBackendApplication {
 
 	public static void main(String[] args) {

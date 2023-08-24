@@ -1,6 +1,6 @@
 package com.example.resellChartBackend.services;
 
-import com.example.resellChartBackend.ClothItem;
+import com.example.resellChartBackend.domains.ClothItem;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
