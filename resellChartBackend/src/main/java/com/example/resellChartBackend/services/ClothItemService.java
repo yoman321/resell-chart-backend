@@ -26,11 +26,22 @@ public class ClothItemService {
     public void addNewClothItem(ClothItem item) {
 
         Example<ClothItem> exampleItem = Example.of(item);
-
         List<ClothItem> optionalItem = clothItemRepository.findAll(exampleItem);
+
         if (!optionalItem.isEmpty()){
             throw new IllegalStateException("Item already exist in your inventory");
         }
         clothItemRepository.save(item);
+    }
+
+    public void removeClothItem(ClothItem item) {
+
+        Example<ClothItem> exampleItem = Example.of(item);
+        List<ClothItem> optionalItem = clothItemRepository.findAll(exampleItem);
+
+        if (optionalItem.isEmpty()){
+            throw new IllegalStateException(" does not exist in your inventory");
+        }
+        clothItemRepository.delete(item);
     }
 }

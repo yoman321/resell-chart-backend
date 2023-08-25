@@ -25,4 +25,8 @@ public class ClothItemController {
     public void registerNewClothItem(@RequestBody ClothItem item){
         clothItemService.addNewClothItem(item);
     }
+    @DeleteMapping
+    public void deleteClothItem(@RequestBody ClothItem item){
+        clothItemService.removeClothItem(item);
+    }
 }

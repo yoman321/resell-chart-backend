@@ -3,8 +3,7 @@ package com.example.resellChartBackend.domains;
 import jakarta.persistence.*;
 
 @Entity
-@Table
-public class ClothItem {
+public class ClothItem extends Cloth{
 
     @Id
     @SequenceGenerator(
@@ -17,7 +16,6 @@ public class ClothItem {
             generator = "item_sequence"
     )
     private Long id;
-    private String email;
     private String clothItemType;
     private String clothItemName;
     private int clothItemSize;
@@ -26,18 +24,20 @@ public class ClothItem {
     }
 
     public ClothItem(Long id, String email, String clothItemType, String clothItemName, int clothItemSize) {
+        super(email);
         this.id = id;
-        this.email = email;
         this.clothItemType = clothItemType;
         this.clothItemName = clothItemName;
         this.clothItemSize = clothItemSize;
     }
-
+    public ClothItem(String email, String clothItemType, String clothItemName, int clothItemSize){
+        super(email);
+        this.clothItemType = clothItemType;
+        this.clothItemName = clothItemName;
+        this.clothItemSize = clothItemSize;
+    }
     public Long getId(){
         return id;
-    }
-    public String getEmail(){
-        return email;
     }
     public String getClothItemType() {
         return clothItemType;
@@ -54,9 +54,6 @@ public class ClothItem {
         this.id = id;
     }
 
-    public void setEmail(String email){
-        this.email = email;
-    }
     public void setClothItemType(String clothItemType) {
         this.clothItemType = clothItemType;
     }
