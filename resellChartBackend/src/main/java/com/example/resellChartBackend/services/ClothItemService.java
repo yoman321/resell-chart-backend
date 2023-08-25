@@ -7,7 +7,6 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ClothItemService {
@@ -40,8 +39,8 @@ public class ClothItemService {
         List<ClothItem> optionalItem = clothItemRepository.findAll(exampleItem);
 
         if (optionalItem.isEmpty()){
-            throw new IllegalStateException(" does not exist in your inventory");
+            throw new IllegalStateException("item does not exist in your inventory");
         }
-        clothItemRepository.delete(item);
+        clothItemRepository.deleteAll(optionalItem);
     }
 }
