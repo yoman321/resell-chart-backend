@@ -19,14 +19,16 @@ public class ClothItemConfig {
                     "someemail@gmail.com",
                     "shoes",
                     "Jordan 1",
-                    12
+                    12,
+                    2
             );
             ClothItem item2 = new ClothItem(
                     2L,
                     "notanemail@gmail.com",
                     "shoes",
                     "Jordan 1",
-                    7
+                    7,
+                    1
             );
             repository.saveAll(List.of(item1, item2));
         };

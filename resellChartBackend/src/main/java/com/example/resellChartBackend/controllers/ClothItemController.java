@@ -29,4 +29,8 @@ public class ClothItemController {
     public void deleteClothItem(@RequestBody ClothItem item){
         clothItemService.removeClothItem(item);
     }
+    @PutMapping
+    public void updateClothItem(@RequestBody ClothItem item){
+        clothItemService.updateClothItem(item);
+    }
 }

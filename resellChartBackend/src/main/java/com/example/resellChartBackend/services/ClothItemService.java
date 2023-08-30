@@ -2,6 +2,7 @@ package com.example.resellChartBackend.services;
 
 import com.example.resellChartBackend.domains.ClothItem;
 import com.example.resellChartBackend.repositories.ClothItemRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
@@ -42,5 +43,13 @@ public class ClothItemService {
             throw new IllegalStateException("item does not exist in your inventory");
         }
         clothItemRepository.deleteAll(optionalItem);
+    }
+
+    @Transactional
+    public void updateClothItem(ClothItem item) {
+
+        ClothItem savedItem = clothItemRepository.findClothItemByClothItemNameAndClothItemSize(item.getClothItemName(), item.getClothItemSize())
+                .orElseThrow(() -> new IllegalStateException("Student with Id "+item.getId()+ " does not exist"));
+        savedItem.setClothItemAmount(item.getClothItemAmount());
     }
 }
