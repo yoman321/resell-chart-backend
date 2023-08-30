@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is meant to be the backend project for the Resell Chart website.
+This is the backend project for the Resell Chart website.
 
 ### What is Resell Chart?
 
